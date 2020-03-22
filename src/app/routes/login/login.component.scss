@@ -1,0 +1,37 @@
+$bg-color:#1D1D1D;
+$text-color:#ffffff;
+
+
+body {
+    background-color: $bg-color;
+    height: 100%;
+}
+
+
+.logo{
+    margin-left:90px;
+    margin-top: 150px;
+}
+
+.uk-card{
+    width: 500px;
+    height: 350px;
+    margin-left: 550px;
+    background-color: #F7F7F7;
+    border-radius: 2rem;
+   
+}
+
+.uk-input{
+    background-color: #EDEDED	;
+    width: 300px;
+}
+
+.login-btn{
+    margin-left:60px;
+}
+
+.uk-button{
+    background-color: #554CAD;
+    color: $text-color;
+}
