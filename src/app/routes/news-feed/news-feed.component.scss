@@ -6,7 +6,6 @@ $text-color:#ffffff;
 
 body {
     background-color: #020303;
-    height: 100%;
 }
 
 .profile-pic{
@@ -93,8 +92,14 @@ body {
   }
 
   .post-card{
-      margin-left:540px;
+      margin-left:420px;
       margin-top: 50px;
+  }
+
+  .comment-card{
+    margin-top:50px;
+    height: 400px;
+    margin-right:150px;
   }
 
   .upload-card{
