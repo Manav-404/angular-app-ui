@@ -213,4 +213,39 @@ body {
 
   }
 
+
+  .scroll{
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .comment-div{
+    margin-right:40px;
+  }
   
+  .comment-button{
+    width: 150px;
+    margin-left:80px;
+    border-radius: 20px;background-color: $text-color;
+    color: $bg-color;
+    border: 1px solid #554CAD ;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: center;
+
+  }
+
+  .comment-name{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color:#554CAD;
+    position: absolute;
+
+  }
+
+  .comment-text{
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+  }

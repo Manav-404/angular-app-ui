@@ -27,11 +27,13 @@
             <div class="uk-navbar-center">
         
                 <ul class="uk-navbar-nav">
-                    <li class="uk-active "><a href="#"><img src="assets/img/home.svg" alt="" height="20px" width="20px" class="nav-cen"></a></li>
+                    <li class="uk-active " ><a href="#"><img src="assets/img/home.svg" alt="" height="20px" width="20px" class="nav-cen"></a>
+                    </li>
                     <li class="uk-active"><a href="#"><img src="assets/img/notification.svg" alt="" height="20px" width="20px"class="nav-cen"></a></li>
                     <li class="uk-active"><a href="#"><img src="assets/img/account.svg" alt="" height="20px" width="20px" class="profile-pic"></a></li>
-                    <li class="uk-active"><a href="#"><img src="assets/img/team.svg" alt="" height="20px" width="20px" style="margin-left:20px"></a></li>
-                    <li class="uk-active"><a href="#"><img src="assets/img/search.png" alt="" height="20px" width="20px" style="margin-left:20px"></a></li>
+                    <li class="uk-active"><a href="#"><img src="assets/img/team.svg" alt="" height="20px" width="20px" style="margin-left:20px"></a>
+                    </li>
+                    <li class="uk-active"><a [routerLink]="['/search']"><img src="assets/img/search.png" alt="" height="20px" width="20px" style="margin-left:20px"></a></li>
                           
                 </ul>
             </div>
@@ -110,7 +112,6 @@
                 </div>
               </div>
           </div>
-
           <div class="row">
               <div class="col-8">
                 <div class="post-card">
@@ -149,12 +150,42 @@
                   </div>
               </div>
               <div class="col-4">
-                <div class="card comment-card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
+                <div class="card comment-card" style="width: 25rem;">
+                    <div class="uk-card-body">
+                        <form class="uk-grid-small" uk-grid>
+                            <div class="uk-width-1-1@s">
+                                <input class="uk-input text-center" type="text" placeholder="Whats your say ?" >
+                            </div>
+                            <div class="uk-width-1-1@s">
+                                <input class="uk-input comment-button"  type="submit" value="Comment" >
+                            </div>
+                        </form>
+                    </div>
+                    <div  class="scroll">
+                        <hr>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p class="comment-name">Manav Desai</p>
+                                <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="comment-name">Manav Desai</p>
+                                <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="comment-name">Manav Desai</p>
+                                <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="comment-name">Manav Desai</p>
+                                <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
+                            </li>
+                            <li class="list-group-item">
+                                <p class="comment-name">Manav Desai</p>
+                                <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
+                            </li>
+                          </ul>
+                    </div>
                   </div>
               </div>
           </div>
