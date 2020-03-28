@@ -1,0 +1,83 @@
+$bg-color:#0d0d0d;
+$text-color:#ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:500&display=swap');
+
+
+body {
+    background-color: #020303;
+}
+
+.welcome-setup{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 28px;
+    color: $text-color;
+    text-align: center;
+    margin-top:40px;
+}
+
+.profile-pic{
+    border-radius: 50%;
+    height: 160px;
+    width: 160px;
+    margin-left: 690px;
+    margin-top:60px;
+
+}
+
+.setup-upload-card{
+    margin-left:530px;
+    margin-top:40px;
+    background-color: #1a1a1a;
+    color: #D3D3D3;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.upload-btn:hover{
+    background-color: #1a1a1a;
+    color: $text-color;
+
+}
+
+.custom-file-label{
+    background-color: #1a1a1a;
+    color: #D3D3D3;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.setup-info-card{
+    margin-left:516px;
+    margin-top:40px;
+    border-radius: 20px;
+    background-color: #262626;
+    color: $text-color;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-control{
+    background-color: #262626;
+    color: $text-color;
+    font-family: 'Montserrat', sans-serif;
+    border:1px solid #D3D3D3;
+
+}
+
+
+.btn-next{
+    border-radius: 50%;
+    background-color: #554CAD;
+    color: #D3D3D3;
+    height: 50px;
+    width: 50px;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-left:390px;
+}
+
+.fa-arrow-right{
+    color: $text-color;
+}

@@ -10,6 +10,7 @@ import { NewsFeedComponent } from './routes/news-feed/news-feed.component';
 import {LoadingBarModule} from '@ngx-loading-bar/core'
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SearchFriendComponent } from './routes/search-friend/search-friend.component';
+import { SetupComponent } from './routes/profile/setup/setup.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SearchFriendComponent } from './routes/search-friend/search-friend.comp
     ProfileComponent,
     NewsFeedComponent,
     SearchFriendComponent,
+    SetupComponent,
 
     
     
