@@ -1,7 +1,212 @@
+$bg-color:#0d0d0d;
+$text-color:#ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:500&display=swap');
+
+
 body {
     background-color: #020303;
 }
 
-.profile-pic{
+.profile-pic-user{
+    height: 120px;
+    width: 120px;
+    margin-left: 155px;
     border-radius: 50%;;
 }
+
+.uk-navbar-container{
+    background-color: $bg-color;
+    height: 70px;
+    box-shadow: 1px 16px 11px -16px #111;    
+}
+
+.nav-cen{
+    margin-right:20px;
+}
+
+.logo{
+    margin-left:40px;
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: $text-color;
+}
+
+
+.profile-card{
+    width: 506px;
+    height: 360px;
+    border-radius: 40px;
+    background-color: $bg-color;
+    margin-left:520px;
+    margin-top: 50px;;
+  }
+
+
+  .profile-name{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-left: 145px;
+    margin-top: 10px;
+    color: $text-color;
+  }
+
+  .profile-city{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-left: 161px;
+    color: $text-color;
+  }
+
+  .uk-button-edit{
+    width:180px;
+    height:36px;
+    color: $text-color;
+    background-color: #554CAD;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 3px;
+    margin-left: 130px;
+
+    
+}
+
+.uk-button-delete{
+    width:180px;
+    height:36px;
+    color: $text-color;
+    background-color: #554CAD;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left:130px;
+    
+}
+.post-card{
+    margin-left:240px;
+    margin-top: 50px;
+}
+
+.comment-card{
+  margin-top:50px;
+  height: 400px;
+  margin-left: 100px;
+}
+
+
+.post-submit{
+    border-radius: 100px;
+    background-color: #554CAD;
+    color: $text-color;
+    width: 300px;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-left:10px;
+  }
+
+  .uk-card-post{
+      width: 490px;
+      height: 540px;
+      background-color: $bg-color;
+      border-radius: 20px;
+  }
+  
+  .post-user{
+    width:30px; 
+    height: 30px; 
+    border-radius: 50%;
+    margin-left:20px;
+  
+    
+  }
+
+  .post-name{
+    margin-top: 6px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: $text-color;
+    margin-right: 20px;
+  }
+
+  .post-text-css{
+    top:0;
+    margin: 0;
+    bottom: 0;
+  }
+  
+
+
+  .post-content{
+    margin-left: 20px;
+      margin-top:10px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color: $text-color;
+  }
+
+  .uk-divider{
+      color: $text-color;
+      width: 100%;
+  }
+
+  .fa-heart-o{
+    margin-left:20px;
+  }
+
+  .fa-comment-o{
+    margin-right:30px;
+  }
+
+  .post-date{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    margin-left:80px;
+    margin-top:10px
+
+  }
+
+
+  .scroll{
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .comment-div{
+    margin-right:40px;
+  }
+  
+  .comment-button{
+    width: 150px;
+    margin-left:80px;
+    border-radius: 20px;background-color: $text-color;
+    color: $bg-color;
+    border: 1px solid #554CAD ;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: center;
+
+  }
+
+  .comment-name{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color:#554CAD;
+    position: absolute;
+
+  }
+
+  .comment-text{
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+
+  }
