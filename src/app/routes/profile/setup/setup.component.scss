@@ -6,6 +6,7 @@ $text-color:#ffffff;
 
 body {
     background-color: #020303;
+    height: 100%;
 }
 
 .welcome-setup{
@@ -80,4 +81,10 @@ body {
 
 .fa-arrow-right{
     color: $text-color;
+}
+
+.toast-title{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
 }

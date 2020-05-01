@@ -14,20 +14,18 @@
       </div>
 
       <div class="row">
-          <img src="assets/img/nature.jpg" alt="" class="profile-pic" style="display: inline-block;" *ngIf="show">
+          <img [attr.src]="imageUrl | safe:'resourceUrl' " alt="" class="profile-pic" style="display: inline-block;" *ngIf="show">
         <div class="card setup-upload-card">
             <div class="card-body">
-                <form>
                     <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="inputGroupFile04">
-                          <label class="custom-file-label" for="inputGroupFile04">Choose profile picture</label>
+                          <input type="file" class="custom-file-input" (change)="selected($event)">
+                          <label class="custom-file-label">Choose profile picture</label>
                         </div>
                         <div class="input-group-append">
-                          <button class="btn btn-outline-secondary upload-btn" type="button">Upload</button>
+                          <button class="btn btn-outline-secondary upload-btn" type="button" (click)="upload()">Upload</button>
                         </div>
                       </div>
-                  </form>
             </div>
           </div>
          
@@ -36,38 +34,50 @@
       <div class="row">
         <div class="card setup-info-card">
             <div class="card-body">
-                <form>
+                <form  [formGroup]="profileForm">
                     <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="inputEmail4">First Name</label>
-                        <input type="text" class="form-control" id="inputEmail4" >
+                        <label >First Name</label>
+                        <input type="text" class="form-control" formControlName="fname" >
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="inputPassword4">Last Name</label>
-                        <input type="text" class="form-control" id="inputPassword4">
+                        <label f>Last Name</label>
+                        <input type="text" class="form-control" formControlName="lname">
                       </div>
                     </div>
                     <div class="form-row">
-                      <div class="form-group col-md-8">
+                      <div class="form-group col-md-12">
                         <label for="inputState">City</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
+                        <select class="form-control" (change)="chosen($event)" formControlName="city">
+                          <option  *ngFor="let city of cityList" [value]="city">{{city}}</option>
                         </select>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
                       </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-next " routerLink="/news-feed"><em class="fa fa-arrow-right" aria-hidden="true"></em></button>
+                    <button type="button" class="btn btn-next " (click)="profileSubmit()"><em class="fa fa-arrow-right" aria-hidden="true"></em></button>
                   </form>
             </div>
           </div>
       </div>
-
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" *ngIf="showToast" style="position: absolute; top: 0; right: 0;">
+        <div class="toast-header">
+          <strong class="mr-auto toast-title" >FACEBOOK</strong>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          {{toastMessage}}
+        </div>
+      </div>
   </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
     <br><br>
     <br><br>
     <br><br>

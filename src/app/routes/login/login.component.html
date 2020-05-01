@@ -17,26 +17,26 @@
         <div>
             <div>
                 <div class="uk-card uk-box-shadow-medium uk-padding uk-card-default uk-card-body ">
-                    <form class="uk-text-center">
+                    <form class="uk-text-center" [formGroup]="userForm">
 
                         <div class="uk-margin" style="margin-top:40px">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input" type="email" placeholder="Email">
+                                <input class="uk-input" type="email" placeholder="Email" formControlName="email">
                             </div>
                         </div>
                     
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                                <input class="uk-input" type="password" placeholder="Password">
+                                <input class="uk-input" type="password" placeholder="Password"   formControlName="password">
                             </div>
                         </div>
                     
                     </form>
                     <div class="uk-column-1-2@l uk-column-divider">
                         <p uk-margin>
-                            <button class="uk-button uk-button-default login-btn">SIGNUP</button>
+                            <button class="uk-button uk-button-default login-btn"  (click)="signup()">SIGNUP</button>
                         </p>
                         <p uk-margin>
                             <button class="uk-button uk-button-default">LOGIN</button>
