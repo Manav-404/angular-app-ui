@@ -15,6 +15,10 @@ import { SetupComponent } from './routes/profile/setup/setup.component';
 import { authInterceptorProviders } from './auth/authInterceptor';
 import { CommonModule } from '@angular/common';
 import { SafePipe } from './pipes/safe.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+
 
 
 @NgModule({
@@ -38,7 +42,10 @@ import { SafePipe } from './pipes/safe.pipe';
     ReactiveFormsModule,
     LoadingBarModule,
     NgxSkeletonLoaderModule , 
-    HttpClientModule
+    HttpClientModule , 
+    BrowserAnimationsModule ,
+    ToastrModule.forRoot() 
+
     
   ],
   providers: [authInterceptorProviders],

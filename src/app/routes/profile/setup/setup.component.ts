@@ -64,7 +64,7 @@ export class SetupComponent implements OnInit {
         this.loader.stop();
         this.showToast=true;
         this.toastMessage = "Alright! You are good to go"
-        this.route.navigate(['/news-feed'])
+        this.route.navigate(['/news-feed' , {'id':this.profileData.user_id}])
       });
     },(error)=>{
       this.showToast=true;

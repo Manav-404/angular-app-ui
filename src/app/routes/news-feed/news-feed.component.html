@@ -30,7 +30,7 @@
                         <li class="uk-active " ><a href="#"><img src="assets/img/home.svg" alt="" height="20px" width="20px" class="nav-cen"></a>
                         </li>
                         <li class="uk-active"><a href="#"><img src="assets/img/notification.svg" alt="" height="20px" width="20px"class="nav-cen"></a></li>
-                        <li class="uk-active"><a href="#"><img src="assets/img/account.svg" alt="" height="20px" width="20px" class="profile-pic"></a></li>
+                        <li class="uk-active"><a (click)="toProfile()"><img src="assets/img/account.svg" alt="" height="20px" width="20px" class="profile-pic"></a></li>
                         <li class="uk-active"><a href="#"><img src="assets/img/team.svg" alt="" height="20px" width="20px" style="margin-left:20px"></a>
                         </li>
                         <li class="uk-active"><a [routerLink]="['/search']"><img src="assets/img/search.png" alt="" height="20px" width="20px" style="margin-left:20px"></a></li>
@@ -58,8 +58,8 @@
         <div class="container-fluid">
             <div class="sidebar">
                <div class="uk-grid">
-                   <div><img src="assets/img/man.jpg" alt="" class="profile"></div>
-                   <div><h2 class="name">Henry Jackson</h2></div>
+                   <div><img [src]="profileImage" alt="" class="profile"></div>
+                   <div><h2 class="name">{{name}}</h2></div>
                </div>
                <div class="uk-grid">
                 <button class="uk-button uk-button-default uk-button-defaultz">Friends</button>
@@ -68,7 +68,7 @@
                 <button class="uk-button uk-button-default uk-button-defaultz">Gallery</button>
                </div>
                <div class="uk-grid">
-                <button class="uk-button ik-button-default uk-button-defaultz">Wall</button>
+                <button class="uk-button ik-button-default uk-button-defaultz" (click)="toProfile()">Wall</button>
                </div>
     
               </div>
@@ -79,28 +79,27 @@
                     <div class="uk-card uk-card-default uk-card-body upload-card">
                         <div class="row">
                             <div class="col-12">
-                                <form>
+                                <form [formGroup]="postForm">
                                     <div class="uk-form-controls">
-                                        <input class="uk-input put-post" id="form-stacked-text" type="text"  autocomplete="off" placeholder=" Whats's on your mind ?">
+                                        <input class="uk-input put-post" id="form-stacked-text" type="text"  autocomplete="off"  placeholder=" Whats's on your mind ?" formControlName="text">
                                     </div>
                                     <div class="row">
                                         <div class="col-3">
                                             <img src="https://img.icons8.com/cotton/64/000000/stack-of-photos.png" class="gallery-img" height="35px" width="35px"/>
                                         </div>
                                         <div class="col-9">
-                                            <form>
-                                                <div class="uk-margin">
-                                                    <div uk-form-custom>
-                                                        <input type="file">
-                                                        <button class="uk-button uk-button-default file-button" type="button" tabindex="-1">Choose Photos</button>
-                                                    </div>
+                                            <div class="uk-margin">
+                                                <div uk-form-custom>
+                                                    <input type="file" formControlName ="file" (change)="selected($event)">
+                                                    <button class="uk-button uk-button-default file-button" type="button" tabindex="-1">Choose Photos</button>
                                                 </div>
-                                            </form>
-                                        </div>
+                                            </div>
                                     </div>
+                                    </div>
+                                        
                                     <div class="row">
                                         <div class="col-12">
-                                            <button class="uk-button uk-button-default post-submit" type="submit">Post</button>
+                                            <button class="uk-button uk-button-default post-submit" type="submit" (click)="post()">Post</button>
                 
                                         </div>
                                     </div>
@@ -112,7 +111,12 @@
                     </div>
                   </div>
               </div>
-              <div class="row">
+              <div class="row" *ngIf="postsLength==0">
+                  <div class="col-sm-12">
+                      <h1 class="no-posts">There are no posts to show</h1>
+                  </div>
+              </div>
+              <div class="row" *ngIf="postsLength>0">
                   <div class="col-8">
                     <div class="post-card">
                         <div class="uk-card uk-card-post uk-card-default">
