@@ -46,4 +46,12 @@ export class ProfileService {
       })
     )
   }
+
+  public search(text): Observable<any>{
+    return this.http.get(this.restUrl+'search/'+text).pipe(
+      map((body)=>{
+        return body; 
+      })
+    )
+  }
 }

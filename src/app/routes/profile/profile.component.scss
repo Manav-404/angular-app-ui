@@ -6,6 +6,7 @@ $text-color:#ffffff;
 
 body {
     background-color: #020303;
+    height: 100%;
 }
 
 .profile-pic-user{
@@ -49,7 +50,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     font-size: 20px;
-    margin-left: 145px;
+    text-align: center;;
     margin-top: 10px;
     color: $text-color;
   }

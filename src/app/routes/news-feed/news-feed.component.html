@@ -29,7 +29,8 @@
                     <ul class="uk-navbar-nav">
                         <li class="uk-active " ><a href="#"><img src="assets/img/home.svg" alt="" height="20px" width="20px" class="nav-cen"></a>
                         </li>
-                        <li class="uk-active"><a href="#"><img src="assets/img/notification.svg" alt="" height="20px" width="20px"class="nav-cen"></a></li>
+                        <li class="uk-active"><a href="#"><img src="assets/img/notification.svg" alt="" height="20px" width="20px"class="nav-cen" (click)="notification()"></a>
+                        </li>
                         <li class="uk-active"><a (click)="toProfile()"><img src="assets/img/account.svg" alt="" height="20px" width="20px" class="profile-pic"></a></li>
                         <li class="uk-active"><a href="#"><img src="assets/img/team.svg" alt="" height="20px" width="20px" style="margin-left:20px"></a>
                         </li>
@@ -116,85 +117,61 @@
                       <h1 class="no-posts">There are no posts to show</h1>
                   </div>
               </div>
-              <div class="row" *ngIf="postsLength>0">
-                  <div class="col-8">
-                    <div class="post-card">
-                        <div class="uk-card uk-card-post uk-card-default">
-                            <div class="uk-card-media-top">
-                                <img src="assets/img/nature.jpg" alt="">
-                            </div>
-                            <div class="uk-card-body">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <img src="assets/img/man.jpg" alt=""class="post-user">
-                                    </div>
-                                    <div class="col-10">
-                                        <h2 class="post-name">Henry Jackson</h2>
-            
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h3 class="post-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio debitis deserunt non expedita hic exercitationem officiis earum, placeat iure voluptatem? Libero aliquam.</h3>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">
-                                      <!-- <a><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></a> -->
-                                    </div>
-                                    <div class="col-3">
-                                        <!-- <a><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a> -->
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="post-date">Posted On : 31/03/2020</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="card comment-card" style="width: 25rem;">
-                        <div class="uk-card-body">
-                            <form class="uk-grid-small" uk-grid>
-                                <div class="uk-width-1-1@s">
-                                    <input class="uk-input text-center" type="text" placeholder="Whats your say ?" >
-                                </div>
-                                <div class="uk-width-1-1@s">
-                                    <input class="uk-input comment-button"  type="submit" value="Comment" >
-                                </div>
-                            </form>
-                        </div>
-                        <div  class="scroll">
-                            <hr>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <p class="comment-name">Manav Desai</p>
-                                    <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
-                                </li>
-                                <li class="list-group-item">
-                                    <p class="comment-name">Manav Desai</p>
-                                    <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
-                                </li>
-                                <li class="list-group-item">
-                                    <p class="comment-name">Manav Desai</p>
-                                    <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
-                                </li>
-                                <li class="list-group-item">
-                                    <p class="comment-name">Manav Desai</p>
-                                    <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
-                                </li>
-                                <li class="list-group-item">
-                                    <p class="comment-name">Manav Desai</p>
-                                    <p class="comment-text">abcd efgh hijk Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum doloremque hic, molestias autem veniam, cupiditate molestiae accusantium.</p>
-                                </li>
-                              </ul>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-    
+              <div *ngFor = "let post of posts">
+                <div class="row" *ngIf="postsLength>0">
+                    <div class="col-8">
+                      <div class="post-card">
+                          <div class="uk-card uk-card-post uk-card-default">
+                              <div class="uk-card-media-top">
+                                  <img [src]="post.path" alt="">
+                              </div>
+                              <div class="uk-card-body">
+                                  <div class="row">
+                                      <div class="col-2">
+                                          <img src="assets/img/man.jpg" alt=""class="post-user">
+                                      </div>
+                                      <div class="col-10">
+                                          <h2 class="post-name">{{post.user_name}}</h2>
               
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-12">
+                                          <h3 class="post-content">{{post.caption}}</h3>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="card comment-card" style="width: 25rem;">
+                          <div class="uk-card-body">
+                              <form class="uk-grid-small" uk-grid>
+                                  <div class="uk-width-1-1@s">
+                                      <input class="uk-input text-center" type="text" placeholder="Whats your say ?" >
+                                  </div>
+                                  <div class="uk-width-1-1@s">
+                                      <input class="uk-input comment-button"  type="submit" value="Comment" >
+                                  </div>
+                              </form>
+                          </div>
+                          <div  class="scroll">
+                              <hr>
+                              <ul class="list-group list-group-flush" *ngFor="let comment of post.comments">
+                                  <li class="list-group-item">
+                                      <p class="comment-name">{{comment.profile.fname+' '+comment.profile.lname}}</p>
+                                      <p class="comment-text">comment.text</p>
+                                  </li>
+                                </ul>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+      
+                
+                
+              </div>
               
     
               

@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   private loader = this.loadingBar;
   constructor(private loadingBar : LoadingBarService , private service : AuthService
-     , private fb : FormBuilder , private zone:NgZone , private route : Router , private profileService : ProfileService ) { 
+     , private fb : FormBuilder , private zone:NgZone , private route : Router , private profileService : ProfileService) { 
     this.userForm = this.fb.group({
       'email':[''],
       'password':['']

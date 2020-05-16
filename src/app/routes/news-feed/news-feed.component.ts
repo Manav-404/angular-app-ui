@@ -127,6 +127,10 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
   toProfile(){
     this.route.navigate(['/profile/main',{'id':this.userId}]);
   }
+
+  notification(){
+    this.route.navigate(['/notifications',{'id':this.userId}]);
+  }
  
   ngOnDestroy(): void {
     this.polling.unsubscribe();

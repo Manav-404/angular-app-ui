@@ -5,6 +5,7 @@ import { SearchFriendComponent } from './routes/search-friend/search-friend.comp
 import { NewsFeedComponent } from './routes/news-feed/news-feed.component';
 import { ProfileComponent } from './routes/profile/profile.component';
 import { SetupComponent } from './routes/profile/setup/setup.component';
+import { NotificationComponent } from './routes/notification/notification.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,9 @@ const routes: Routes = [
   {
     path:"main" , component:ProfileComponent
   }
-]}
+]},
+{path:"notifications" , component:NotificationComponent} , 
+
 ];
 
 @NgModule({

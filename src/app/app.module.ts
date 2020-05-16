@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { SafePipe } from './pipes/safe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NotificationComponent } from './routes/notification/notification.component';
 
 
 
@@ -30,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
     SearchFriendComponent,
     SetupComponent,
     SafePipe,
+    NotificationComponent,
 
     
     

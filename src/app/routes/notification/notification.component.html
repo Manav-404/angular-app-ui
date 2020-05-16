@@ -55,28 +55,14 @@
             </nav>
         </div>
     
-        <div class="search-container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="search-title text-center">Search for friends</h2>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-12">
-                    <form>
-                    <input class="uk-input" type="text" placeholder="Search......" (keyup.enter)="search($event)">
-                    </form>
-                </div>
-            </div>
-        </div>
+        
     
     
-    
-        <div class="row" *ngIf="showFriends">
+        <div class="row">
             <div class="col-12">
                 <div class="card search-card" style="width: 38rem;">
                     <div class="card-header">
-                      Results : {{profileLength}}
+                      Notifications : {{notificationLength}}
                     </div>
                     <ul class="list-group list-group-flush scroll"*ngFor="let prof of profile" >
                       <li class="list-group-item">
@@ -88,7 +74,7 @@
                                   <h2 class="friend-name">{{prof.fname +" "+prof.lname}}</h2>
                               </div>
                               <div class="col-4">
-                                <button class="uk-button uk-button-default" (click)="sendRequest(prof)">Send Request</button>
+                                <button class="uk-button uk-button-default" (click)="acceptRequest(prof)">Accept Request</button>
                               </div>
                           </div>
                       </li>
