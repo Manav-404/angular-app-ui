@@ -1,0 +1,45 @@
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav class="uk-navbar-container" uk-navbar>
+
+        <div class="uk-navbar-left">
+    
+            <ul class="uk-navbar-nav">
+                <li><h2 class="logo">FACEBOOK</h2></li>
+                <!-- <div class="uk-margin">
+                    <form class="uk-search uk-search-default">
+                        <a href="" class="uk-search-icon-flip" uk-search-icon></a>
+                        <input class="uk-search-input" type="search" placeholder="Search...">
+                    </form>
+                </div>             -->
+            </ul>
+    
+        </div>
+
+        <div class="uk-navbar-center">
+    
+            <ul class="uk-navbar-nav">
+                <li class="uk-active " ><a (click)="toHome()"><img src="assets/img/home.svg" alt="" height="20px" width="20px" class="nav-cen"></a>
+                </li>
+                <li class="uk-active"><a (click)="notification()"><img src="assets/img/notification.svg" alt="" height="20px" width="20px"class="nav-cen"></a>
+                </li>
+                <li class="uk-active"><a (click)="toProfile()"><img src="assets/img/account.svg" alt="" height="20px" width="20px" class="profile-pic"></a></li>
+                <li class="uk-active"><a [routerLink]="['/search']"><img src="assets/img/search.png" alt="" height="20px" width="20px" style="margin-left:20px"></a></li>
+                      
+            </ul>
+        </div>
+    
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="#"><img src="assets/img/settings.svg" alt="" height="20px" width="20px" style="margin-bottom: 10px;margin-right: 40px;"></a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a (click)=logout()>Log Out</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+    
+        </div>
+    </nav>
+</div>

@@ -7,54 +7,7 @@
     <title>Facebook</title>
 </head>
 <body>
-        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-            <nav class="uk-navbar-container" uk-navbar>
-    
-                <div class="uk-navbar-left">
-            
-                    <ul class="uk-navbar-nav">
-                        <li><h2 class="logo">FACEBOOK</h2></li>
-                        <!-- <div class="uk-margin">
-                            <form class="uk-search uk-search-default">
-                                <a href="" class="uk-search-icon-flip" uk-search-icon></a>
-                                <input class="uk-search-input" type="search" placeholder="Search...">
-                            </form>
-                        </div>             -->
-                    </ul>
-            
-                </div>
-        
-                <div class="uk-navbar-center">
-            
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active " ><a href="#"><img src="assets/img/home.svg" alt="" height="20px" width="20px" class="nav-cen"></a>
-                        </li>
-                        <li class="uk-active"><a href="#"><img src="assets/img/notification.svg" alt="" height="20px" width="20px"class="nav-cen" (click)="notification()"></a>
-                        </li>
-                        <li class="uk-active"><a (click)="toProfile()"><img src="assets/img/account.svg" alt="" height="20px" width="20px" class="profile-pic"></a></li>
-                        <li class="uk-active"><a href="#"><img src="assets/img/team.svg" alt="" height="20px" width="20px" style="margin-left:20px"></a>
-                        </li>
-                        <li class="uk-active"><a [routerLink]="['/search']"><img src="assets/img/search.png" alt="" height="20px" width="20px" style="margin-left:20px"></a></li>
-                              
-                    </ul>
-                </div>
-            
-                <div class="uk-navbar-right">
-                    <ul class="uk-navbar-nav">
-                        <li>
-                            <a href="#"><img src="assets/img/settings.svg" alt="" height="20px" width="20px" style="margin-bottom: 10px;margin-right: 40px;"></a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Reset Password</a></li>
-                                    <li><a href="#">Log Out</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-            
-                </div>
-            </nav>
-        </div>
+       <facebook-navbar [id]="userId"></facebook-navbar>
         <ngx-loading-bar [includeSpinner]="false"  color="#554CAD"></ngx-loading-bar>
         <div class="container-fluid">
             <div class="sidebar">
@@ -65,9 +18,9 @@
                <div class="uk-grid">
                 <button class="uk-button uk-button-default uk-button-defaultz">Friends</button>
                </div>
-               <div class="uk-grid">
+               <!-- <div class="uk-grid">
                 <button class="uk-button uk-button-default uk-button-defaultz">Gallery</button>
-               </div>
+               </div> -->
                <div class="uk-grid">
                 <button class="uk-button ik-button-default uk-button-defaultz" (click)="toProfile()">Wall</button>
                </div>
@@ -123,12 +76,12 @@
                       <div class="post-card">
                           <div class="uk-card uk-card-post uk-card-default">
                               <div class="uk-card-media-top">
-                                  <img [src]="post.path" alt="">
+                                  <img [src]="post.path" alt="" class="post-image">
                               </div>
                               <div class="uk-card-body">
                                   <div class="row">
                                       <div class="col-2">
-                                          <img src="assets/img/man.jpg" alt=""class="post-user">
+                                          <img [src]="post.profile" alt=""class="post-user">
                                       </div>
                                       <div class="col-10">
                                           <h2 class="post-name">{{post.user_name}}</h2>
@@ -147,12 +100,12 @@
                     <div class="col-4">
                       <div class="card comment-card" style="width: 25rem;">
                           <div class="uk-card-body">
-                              <form class="uk-grid-small" uk-grid>
+                              <form class="uk-grid-small" uk-grid [formGroup]="commentForm">
                                   <div class="uk-width-1-1@s">
-                                      <input class="uk-input text-center" type="text" placeholder="Whats your say ?" >
+                                      <input class="uk-input text-center" formControlName="text" type="text" placeholder="Whats your say ?" >
                                   </div>
                                   <div class="uk-width-1-1@s">
-                                      <input class="uk-input comment-button"  type="submit" value="Comment" >
+                                      <input class="uk-input comment-button"  type="button" value="Comment" (click)="comment(post)" >
                                   </div>
                               </form>
                           </div>
@@ -161,7 +114,7 @@
                               <ul class="list-group list-group-flush" *ngFor="let comment of post.comments">
                                   <li class="list-group-item">
                                       <p class="comment-name">{{comment.profile.fname+' '+comment.profile.lname}}</p>
-                                      <p class="comment-text">comment.text</p>
+                                      <p class="comment-text">{{comment.text}}</p>
                                   </li>
                                 </ul>
                           </div>

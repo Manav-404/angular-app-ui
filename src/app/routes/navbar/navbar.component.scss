@@ -1,0 +1,25 @@
+$bg-color:#0d0d0d;
+$text-color:#ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:500&display=swap');
+
+
+.uk-navbar-container{
+    background-color: $bg-color;
+    height: 70px;
+    width: 100%;
+    box-shadow: 1px 16px 11px -16px #111;    
+}
+
+.nav-cen{
+    margin-right:20px;
+}
+
+.logo{
+    margin-left:40px;
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: $text-color;
+}

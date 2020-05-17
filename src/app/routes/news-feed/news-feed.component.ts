@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Profile } from 'src/app/model/Profile';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Post } from 'src/app/model/Post';
+import { Comment } from 'src/app/model/Comment';
 
 @Component({
   selector: 'app-news-feed',
@@ -29,11 +30,15 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
   private postsLength;
   private name;
   private postForm :FormGroup;
+  private commentForm : FormGroup;
   private caption;
   private createPostFile : File;
   private postData ;
   private profileImage;
   private postImage; 
+  private commentData;
+  private text;
+  private comm : Comment;
 
   loader = this.loadingBar;
   constructor(private loadingBar : LoadingBarService , private service:PostService , 
@@ -44,6 +49,11 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
         'text':[''],
         'file':['']
       });
+
+      this.commentForm = this.fb.group({
+        'text':['']
+      });
+
      }
   
 
@@ -124,13 +134,20 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
     this.postForm.get('file').reset();
   }
 
-  toProfile(){
-    this.route.navigate(['/profile/main',{'id':this.userId}]);
+  private comment(post){
+    this.text= this.commentForm.get('text').value;
+    this.comm = new Comment();
+    this.comm.post = post;
+    this.comm.profile = this.profile;
+    this.comm.text = this.text;
+    this.commentService.postComment(this.comm).subscribe((data)=>{
+      this.zone.run(()=>{
+        this.commentData = data;
+      })
+    })
   }
 
-  notification(){
-    this.route.navigate(['/notifications',{'id':this.userId}]);
-  }
+
  
   ngOnDestroy(): void {
     this.polling.unsubscribe();

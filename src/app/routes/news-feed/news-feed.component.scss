@@ -155,7 +155,7 @@ body {
 
   .uk-card-post{
       width: 490px;
-      height: 540px;
+      height: auto;
       background-color: $bg-color;
       border-radius: 20px;
   }
@@ -257,4 +257,9 @@ body {
     font-size: 32px;
     font-family: 'Montserrat', sans-serif;
     color: $text-color;
+  }
+
+  .post-image{
+    height: 360px;
+    width: 490px;
   }

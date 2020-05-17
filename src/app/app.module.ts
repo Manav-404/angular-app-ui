@@ -18,6 +18,7 @@ import { SafePipe } from './pipes/safe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationComponent } from './routes/notification/notification.component';
+import { NavbarComponent } from './routes/navbar/navbar.component';
 
 
 
@@ -32,6 +33,7 @@ import { NotificationComponent } from './routes/notification/notification.compon
     SetupComponent,
     SafePipe,
     NotificationComponent,
+    NavbarComponent,
 
     
     
