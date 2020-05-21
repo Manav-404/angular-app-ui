@@ -108,7 +108,7 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
 
           this.refresh();
         } , (error)=>{
-          this.toaster.error(error.message , "Something went wrong" , {
+          this.toaster.error(error.data , "Something went wrong" , {
             progressBar:true,
             positionClass:'toast-bottom-right',
             progressAnimation:"increasing",
@@ -118,7 +118,7 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
 
         })
       } , (error)=>{
-        this.toaster.error(error.message , "Something went wrong" , {
+        this.toaster.error(error.data , "Something went wrong" , {
           progressBar:true,
           positionClass:'toast-bottom-right',
           progressAnimation:"increasing",
@@ -132,6 +132,8 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
     this.postData = "";
     this.postForm.get('text').reset();
     this.postForm.get('file').reset();
+    this.commentForm.get('text').reset();
+   
   }
 
   private comment(post){
@@ -143,10 +145,14 @@ export class NewsFeedComponent implements OnInit  ,OnDestroy {
     this.commentService.postComment(this.comm).subscribe((data)=>{
       this.zone.run(()=>{
         this.commentData = data;
-      })
-    })
+        this.refresh();
+      });
+    });
   }
-
+  
+  toProfile(){
+    this.route.navigate(["/profile/main" , {"id":this.userId}]);
+  }
 
  
   ngOnDestroy(): void {

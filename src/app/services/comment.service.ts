@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class CommentService {
 
-  private restUrl = "http://localhost:8080/api/comment"
+  private restUrl = "/api/comment"
   constructor(private http : HttpClient) { }
 
   public getComment(postId){

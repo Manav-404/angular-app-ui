@@ -92,15 +92,18 @@
                           </div>
                       </form>
                   </div> -->
-                  <div  class="scroll" *ngFor = "let comment of post.comments">
-                      <hr>
-                      <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                              <p class="comment-name">{{comment.profile.fname + ' '+comment.profile.lname}}</p>
-                              <p class="comment-text">{{comment.text}}</p>
-                          </li>
-                        </ul>
+                  <div class="scroll">
+                    <div  *ngFor = "let comment of post.comments">
+                        <hr>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p class="comment-name">{{comment.profile.fname + ' '+comment.profile.lname}}</p>
+                                <p class="comment-text">{{comment.text}}</p>
+                            </li>
+                          </ul>
+                    </div>
                   </div>
+                 
                 </div>
             </div>
         </div>

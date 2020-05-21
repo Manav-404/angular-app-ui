@@ -12,7 +12,7 @@ import { HttpClient  ,HttpRequest} from '@angular/common/http';
 export class AuthService {
   constructor( private http : HttpClient) { };
 
-  private restUrl = "http://localhost:8080/api/auth/";
+  private restUrl = "/api/auth/";
 
 
   signup(user):Observable<any>{

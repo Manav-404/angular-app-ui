@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class FriendsService {
 
-  private restUrl = "http://localhost:8080/api/friends"
+  private restUrl = "/api/friends"
   constructor(private http : HttpClient) { }
 
   public sendRequest(friendId) : Observable<any>{

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class PostService {
 
-  private restUrl = "http://localhost:8080/api/post";
+  private restUrl = "/api/post";
   constructor(private http : HttpClient) { }
 
 

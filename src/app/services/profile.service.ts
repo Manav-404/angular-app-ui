@@ -9,7 +9,7 @@ import { Profile } from '../model/Profile';
 })
 export class ProfileService {
 
-  private restUrl = 'http://localhost:8080/api/'
+  private restUrl = '/api/'
   constructor(private http : HttpClient) { }
 
 

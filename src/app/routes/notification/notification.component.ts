@@ -48,7 +48,7 @@ export class NotificationComponent implements OnInit {
             this.friends = data.data;
             for(let i =0 ; i<this.profile.length;i++){
               for(let j=0 ; j<this.friends.length ;j++){
-                if(this.profile[i].id==this.friends[i].id){
+                if(this.profile[i].id==this.friends[j].id){
                   this.profile.splice(i,1);
                   this.notificationLength = this.profile.length;
                 }
