@@ -75,4 +75,23 @@ export class NotificationComponent implements OnInit {
     })
   }
 
+
+  private reject(prof){
+    this.service.rejectRequest(prof.user_id).subscribe((data)=>{
+      this.zone.run(()=>{
+        if(data.status==true){
+          const index = this.profile.findIndex(elem=> elem.id==prof.id);
+          this.profile.splice(index , 1);
+          this.notificationLength = this.profile.length;
+        }        
+      })
+    },(error)=>{
+      this.toaster.error(error.message , "Something went wrong" , {
+        progressBar:true,
+        positionClass:'toast-bottom-right',
+        progressAnimation:"increasing",
+        closeButton:true
+      })
+    })
+  }
 }
